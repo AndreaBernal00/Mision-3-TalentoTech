@@ -343,3 +343,29 @@ hr {
     text-align: center; 
 }
 
+.objective{
+    background-color: #fff; 
+    border: 2px solid #050A30; 
+    border-radius: 10px; 
+    padding: 20px; 
+    margin: 20px 0; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+.facts{
+    background-color: #fff; 
+    border: 2px solid #050A30; 
+    border-radius: 10px; 
+    padding: 20px; 
+    margin: 20px 0; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+.curiosity{
+    background-color: #fff; 
+    border: 2px solid #050A30; 
+    border-radius: 10px; 
+    padding: 20px; 
+    margin: 20px 0; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}

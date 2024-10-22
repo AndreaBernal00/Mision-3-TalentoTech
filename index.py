@@ -20,7 +20,7 @@ def contact():
 
 @app.route('/analysis')
 def analysis():
-    df = pd.read_csv('csv/ia.csv')
+    df = pd.read_csv('csv/IA.csv')
     # Grafico 1
     df['Estimated Jobs Eliminated by AI (millions)'] = df['Estimated Jobs Eliminated by AI (millions)'].str.replace('%', '').astype(float)
     df['Estimated New Jobs Created by AI (millions)'] = df['Estimated New Jobs Created by AI (millions)'].str.replace('%', '').astype(float)
