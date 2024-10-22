@@ -20,6 +20,7 @@ def contact():
 @app.route('/analysis')
 def analysis():
     df = pd.read_csv('csv/ia.csv')
+    # Grafico 1
     df['Estimated Jobs Eliminated by AI (millions)'] = df['Estimated Jobs Eliminated by AI (millions)'].str.replace('%', '').astype(float)
     df['Estimated New Jobs Created by AI (millions)'] = df['Estimated New Jobs Created by AI (millions)'].str.replace('%', '').astype(float)
     
@@ -34,13 +35,49 @@ def analysis():
     
     plt.xlabel('Year')
     plt.ylabel('Jobs (millions)')
-    plt.title('Impacto de la IA en los trabajos')
+    plt.title('Trabajos destruidos vs Trabajos creados')
     plt.xticks(x, df['Year'])
     plt.legend()
     
     plt.savefig('static/images/plot.png')
     plt.close()
+    
+    #Grafico 2
+    df['AI Adoption (%)'] = df['AI Adoption (%)'].str.replace('%', '').astype(float)
+    
+    x = df['Year']
+    y = df['AI Adoption (%)']
+    
+    plt.plot(x,y, color='green', label='Evolution of AI use')
+    plt.xlabel('Year')
+    plt.ylabel('AI Adoption (%)')
+    plt.title('Uso de IA en el Entorno Empresarial a Través del Tiempo')
+    plt.legend()
+    
+    plt.savefig('static/images/plot2.png')
+    plt.close()
+    
+    #Grafico 3
+    
+    df['Organizations Using AI'] = df['Organizations Using AI'].str.replace('%', '').astype(float)
+    df['Organizations Planning to Implement AI'] = df['Organizations Planning to Implement AI'].str.replace('%', '').astype(float)
+    
+    x = df['Year']
+    y = df['Organizations Using AI']
+    z = df['Organizations Planning to Implement AI']
+    
+    plt.plot(x,y, color='green', label='Using AI')
+    plt.plot(x,z, color='red', label='Planning to Implement AI')
+    plt.xlabel('Year')
+    plt.ylabel('Use of AI (%)')
+    plt.title('Empresas que Usan y que Planean Usar')
+    plt.legend()
+    
+    plt.savefig('static/images/plot3.png')
+    plt.close()
+    
     return render_template('analysis.html')
+    
     
 
 if __name__ =='__main__':

@@ -3,10 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact</title>
+    <title>Contáctanos</title>
+    <script src="https://kit.fontawesome.com/ed3df3892d.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
 </head>
 <body>
-    <h1>Bienvenidos a la sección de contacto</h1>
+
+    <header>
+        <h1>Contáctanos</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Inicio</a></li>
+                <li><a href="/analysis">Análisis</a></li>
+                <li><a href="/contact">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="contact-form">
+            <h2>Déjanos tu mensaje</h2>
+            <form id="contact-form" onsubmit="return handleSubmit(event)">
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="message">Mensaje:</label>
+                <textarea id="message" name="message" required></textarea>
+
+                <label for="analysis-type">¿Qué tipo de análisis te gustaría ver?</label>
+                <select id="analysis-type" name="analysis-type" onchange="showAnalysisOptions()">
+                    <option value="">Selecciona un tipo de análisis</option>
+                    <option value="impacto">Impacto de la IA en el empleo</option>
+                    <option value="tendencias">Tendencias futuras de la IA</option>
+                    <option value="oportunidades">Oportunidades y retos de la IA</option>
+                </select>
+
+                <div id="extra-options" style="display: none;">
+                    <label for="details">Detalles adicionales:</label>
+                    <textarea id="details" name="details" placeholder="Cuéntanos más sobre el análisis que deseas ver..."></textarea>
+                </div>
+
+                <button type="submit">Enviar</button>
+            </form>            
+        </section>
+    </main>
+
     <footer>
         <hr>
         <div class="social">
@@ -14,7 +59,9 @@
             <a href="#"><i class="fa-brands fa-square-instagram"></i></a>
             <a href="#"><i class="fa-brands fa-square-x-twitter"></i></a>
         </div>
-        <p>&copy; Todos los derechos reservados.</p>
+        <p>&copy; 2024 Análisis de IA. Todos los derechos reservados.</p>
     </footer>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
 </body>
 </html>
+
