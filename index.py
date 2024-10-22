@@ -4,6 +4,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from flask import Flask, render_template
 
+
 #Creando una app (objeto) a partir de una clase(Flask)
 #para poder controlar nuestra aplicación y desplegarla 
 #correctamente
@@ -53,6 +54,7 @@ def analysis():
     plt.ylabel('AI Adoption (%)')
     plt.title('Uso de IA en el Entorno Empresarial a Través del Tiempo')
     plt.legend()
+    plt.grid(True)
     
     plt.savefig('static/images/plot2.png')
     plt.close()
@@ -72,14 +74,52 @@ def analysis():
     plt.ylabel('Use of AI (%)')
     plt.title('Empresas que Usan y que Planean Usar')
     plt.legend()
+    plt.grid(True)
     
     plt.savefig('static/images/plot3.png')
     plt.close()
-    
+
+    # Grafico 4
+    years = list(range(1956, 2024))
+
+    progress = []
+
+    for year in years:
+        if 1956 <= year < 1970:
+            progress.append(10)  # Avances iniciales lentos
+        elif 1970 <= year < 1980:
+            progress.append(20)  # Primer invierno de la IA
+        elif 1980 <= year < 1987:
+            progress.append(30)  # Salida del primer invierno, pequeños avances
+        elif 1987 <= year < 1993:
+            progress.append(30)  # Segundo invierno de la IA
+        elif 1993 <= year < 1997:
+            progress.append(35)  # Final del segundo invierno, avances moderados
+        elif 1997 <= year < 2006:
+            progress.append(45)  # Avances tras Deep Blue
+        elif 2006 <= year < 2012:
+            progress.append(60)  # Avances en redes neuronales profundas
+        elif 2012 <= year < 2018:
+            progress.append(75)  # Grandes avances en reconocimiento de imagen y NLP
+        elif 2018 <= year < 2021:
+            progress.append(85)  # Modelos generativos (GPT-3)
+        elif 2021 <= year <= 2023:
+            progress.append(95)  # GPT-4 y DALL-E 3
+        else:
+            progress.append(100)  # Estado actual de la IA en 2023
+
+    plt.figure(figsize=(10, 6))
+    plt.plot(years, progress, marker='o', linestyle='-', color='b')
+
+    plt.title('Progreso de la Inteligencia Artificial (1956-2023)')
+    plt.xlabel('Años')
+    plt.ylabel('Progreso de la IA (escala de 0 a 100)')
+    plt.grid(True)
+
+    plt.savefig('static/images/plot4.png')
+    plt.close()
     return render_template('analysis.html')
     
-    
-
 if __name__ =='__main__':
     # El modo debug reinicia automáticamente el servidor al hacer cambios,
     # pero es necesario recargar la página en el navegador para ver esos cambios.
