@@ -48,7 +48,7 @@ def analysis():
     x = df['Year']
     y = df['AI Adoption (%)']
     
-    plt.plot(x,y, color='green', label='Evolution of AI use')
+    plt.plot(x,y, color='green', label='Evolution of AI use', linewidth=1.5)
     plt.xlabel('Year')
     plt.ylabel('AI Adoption (%)')
     plt.title('Uso de IA en el Entorno Empresarial a Través del Tiempo')
@@ -66,8 +66,8 @@ def analysis():
     y = df['Organizations Using AI']
     z = df['Organizations Planning to Implement AI']
     
-    plt.plot(x,y, color='green', label='Using AI')
-    plt.plot(x,z, color='red', label='Planning to Implement AI')
+    plt.plot(x,y, color='green', label='Using AI', linewidth=1.5)
+    plt.plot(x,z, color='red', label='Planning to Implement AI',linewidth=1.5)
     plt.xlabel('Year')
     plt.ylabel('Use of AI (%)')
     plt.title('Empresas que Usan y que Planean Usar')

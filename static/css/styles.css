@@ -1,5 +1,6 @@
 /* General styles */
 @import url('https://fonts.googleapis.com/css2?family=Agdasima&family=Bungee+Tint&family=Londrina+Sketch&family=Orbitron:wght@400..900&family=Rubik+Marker+Hatch&family=Sixtyfour+Convergence&display=swap');
+
 body {
     font-family: "Agdasima", sans-serif;
     font-weight: 400;
@@ -12,7 +13,7 @@ body {
 }
 
 header {
-    background-color:#050A30;
+    background-color: #050A30;
     color: #fff;
     padding: 20px 0;
     text-align: center;
@@ -130,7 +131,7 @@ ul li:hover {
 .contact-form textarea:focus,
 .contact-form select:focus {
     border-color: #061E47; /* Color del borde al enfocar */
-    box-shadow: 0 0 5px #0000FF(76, 175, 80, 0.5); /* Sombra suave al enfocar */
+    box-shadow: 0 0 5px rgba(0, 0, 255, 0.5); /* Sombra suave al enfocar */
 }
 
 button {
@@ -218,4 +219,93 @@ hr {
     color: #050A30;
     transform: translateY(-3px); /* Mueve el botón hacia arriba */
 }
+
+/* Intro section */
+.intro {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.intro h2 {
+    font-size: 2.2rem;
+    color: #050A30;
+    margin-bottom: 20px;
+}
+
+.intro p {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto 20px;
+}
+
+.intro-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.intro-image:hover {
+    transform: scale(1.05);
+}
+
+/* Call-to-action section */
+.call-to-action {
+    background-color: #050A30;
+    padding: 40px;
+    text-align: center;
+    color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.call-to-action h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #eee;
+}
+
+.call-to-action .button {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    background-color: #145DA0;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.call-to-action .button:hover {
+    background-color: #fff;
+    color: #145DA0;
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Summary section */
+.summary {
+    margin-bottom: 40px;
+}
+
+.summary h2 {
+    color: #050A30;
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+}
+
+.chart-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.chart-container img:hover {
+    transform: scale(1.05);
+}
+
 
